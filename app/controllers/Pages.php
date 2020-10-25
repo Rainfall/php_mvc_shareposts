@@ -11,6 +11,10 @@
 			$this->view('index');
 		}
 
+		public function about() {
+			$this->view('about');
+		}
+
 	}
 
 ?>
