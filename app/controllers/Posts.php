@@ -2,14 +2,19 @@
 	
 	class Posts extends Controller {
 
-		public $some = 'hi';
+		private $data;
 
 		public function __construct(){
-		 	echo $this->some;
+		 	$this->currentmodel = $this->model('Post');
+		}
+
+		public function get_all_posts() {
+			$this->data = $this->currentmodel->getPosts();
+			return $this->data;
 		}
 
 		public function index() {
-			$this->view('posts/index');
+			$this->view('posts/index', $this->get_all_posts());
 		}
 
 
