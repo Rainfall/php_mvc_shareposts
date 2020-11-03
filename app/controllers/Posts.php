@@ -17,6 +17,10 @@
 			$this->view('posts/index', $this->get_all_posts());
 		}
 
+		public function show($id) {
+			$this->view('posts/post', $this->currentmodel->getPostById($id));
+		}
+
 
 	}
 
